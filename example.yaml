@@ -1,0 +1,11 @@
+# 环境类型，支持 dev 和 prod
+env: dev  # 可选值: dev, prod
+database:
+  default: "user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+# 日志配置
+log:
+  # 日志级别，支持 debug, info, warn, error, dpanic, panic, fatal
+  level: debug  # 可选值: debug, info, warn, error, dpanic, panic, fatal
+  # 日志输出渠道，可以选择多个
+  channel:
+    - console  # 控制台输出

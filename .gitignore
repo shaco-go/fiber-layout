@@ -1,0 +1,16 @@
+# Visual Studio Code
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+*.log
+
+*.yaml
+!example.yaml
