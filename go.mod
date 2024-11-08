@@ -4,7 +4,7 @@ go 1.23.1
 
 require (
 	github.com/duke-git/lancet/v2 v2.3.3
-	github.com/fsnotify/fsnotify v1.7.0
+	github.com/fsnotify/fsnotify v1.8.0
 	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/google/wire v0.6.0
 	github.com/redis/go-redis/v9 v9.7.0
