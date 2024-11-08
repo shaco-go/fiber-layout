@@ -12,22 +12,22 @@ import (
 	"time"
 )
 
-func NewHttpServer(routers ...router.Router) *HttpServer {
+func NewHttpServer(routers *router.Router) *HttpServer {
 	return &HttpServer{
 		app: fiber.New(fiber.Config{
 			ErrorHandler: fiberErrorHandler,
 		}),
-		routers: routers,
+		router: routers,
 	}
 }
 
 type HttpServer struct {
-	app     *fiber.App
-	routers []router.Router
+	app    *fiber.App
+	router *router.Router
 }
 
 func (h *HttpServer) Start(ctx context.Context) error {
-
+	h.router.Register(h.app)
 	return h.app.Listen(fmt.Sprintf(":%d", global.Conf.Port))
 }
 

@@ -24,10 +24,10 @@ func newApp(
 func NewWire() (*server.App, func(), error) {
 	panic(wire.Build(
 		server.ProviderSet,
-		router.ProviderSet,
 		handle.ProviderSet,
 		service.ProviderSet,
 		repo.ProviderSet,
+		router.NewRouter,
 		newApp,
 	))
 }

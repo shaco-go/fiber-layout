@@ -20,9 +20,8 @@ func NewWire() (*server.App, func(), error) {
 	user := repo.NewUser()
 	serviceUser := service.NewUser(user)
 	handleUser := handle.NewUser(serviceUser)
-	api := router.NewApi(handleUser)
-	v := router.NewRouter(api)
-	httpServer := server.NewHttpServer(v...)
+	routerRouter := router.NewRouter(handleUser)
+	httpServer := server.NewHttpServer(routerRouter)
 	taskServer := server.NewTaskServer()
 	app := newApp(httpServer, taskServer)
 	return app, func() {

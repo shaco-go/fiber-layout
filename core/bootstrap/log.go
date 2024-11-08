@@ -39,7 +39,7 @@ func NewLogx(logger *zap.Logger) *logx.Logx {
 	return logx.New(logger, func(ctx context.Context, logger *zap.Logger) *zap.Logger {
 		rid, ok := ctx.Value(constant.RID).(string)
 		if ok {
-			logger.With(zap.String(constant.RID, rid))
+			return logger.With(zap.String(constant.RID, rid))
 		}
 		return logger
 	})
