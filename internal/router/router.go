@@ -1,5 +1,21 @@
 package router
 
-import "github.com/google/wire"
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/google/wire"
+)
 
-var ProviderSet = wire.NewSet(NewRouter)
+type Router interface {
+	Register(app *fiber.App)
+}
+
+func NewRouter(
+	api *Api,
+) []Router {
+	return []Router{api}
+}
+
+var ProviderSet = wire.NewSet(
+	NewApi,
+	NewRouter,
+)

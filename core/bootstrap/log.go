@@ -4,8 +4,8 @@ import (
 	"context"
 	"github.com/shaco-go/go-kit/logc"
 	"github.com/shaco-go/go-kit/logx"
-	"githut.com/shaco-9696/fiber-kit/core/constant"
-	"githut.com/shaco-9696/fiber-kit/global"
+	"githut.com/shaco-go/fiber-kit/core/constant"
+	"githut.com/shaco-go/fiber-kit/global"
 	"go.uber.org/zap"
 )
 

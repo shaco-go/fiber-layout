@@ -4,7 +4,7 @@ import (
 	"github.com/redis/go-redis/v9"
 	"github.com/shaco-go/go-kit/logx"
 	"github.com/spf13/viper"
-	"githut.com/shaco-9696/fiber-kit/config"
+	"githut.com/shaco-go/fiber-kit/config"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 )

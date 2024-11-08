@@ -1,11 +1,37 @@
-# 环境类型，支持 dev 和 prod
-env: dev  # 可选值: dev, prod
-database:
-  default: "user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+# 环境配置
+env: "prod"  # 应用环境，例如 "prod" 或 "dev"
+
+# 端口配置
+port: 8080  # 应用监听的端口
+
 # 日志配置
 log:
-  # 日志级别，支持 debug, info, warn, error, dpanic, panic, fatal
-  level: debug  # 可选值: debug, info, warn, error, dpanic, panic, fatal
-  # 日志输出渠道，可以选择多个
+  level: "debug"  # 日志级别 "debug", "info", "warn", "error", "dpanic", "panic", "fatal"
   channel:
-    - console  # 控制台输出
+    - "stdout"  # 日志输出到标准输出
+    - "file"    # 日志输出到文件
+  console:
+    level: "info"  # 控制台日志的输出级别
+  lark:
+    webhook: "your-webhook-url"  # 飞书通知的 webhook 地址
+    level: "warn"  # 飞书日志通知的级别
+  file:
+    filename: "app.log"  # 日志文件的文件名
+    max_size: 100        # 日志文件的最大大小，单位MB
+    max_age: 30          # 保留的旧日志的最大天数
+    max_backups: 7       # 保留的旧日志的最大数量
+    local_time: true     # 是否使用本地时间，默认为 UTC
+    compress: false      # 是否压缩旧日志文件，默认不压缩
+    level: "error"       # 文件日志的日志级别
+
+# 数据库配置
+database:
+  default: "root:password@tcp(127.0.0.1:3306)/dbname"  # MySQL 数据库连接dsn,多个需要扩展
+
+# Redis 配置
+redis:
+  addr: "127.0.0.1:6379"  # Redis 地址
+  password: "your-password"  # Redis 密码
+  db: 0  # Redis 使用的数据库索引
+  read_timeout: "5s"  # Redis 读取超时
+  write_timeout: "5s"  # Redis 写入超时

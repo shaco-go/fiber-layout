@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/redis/go-redis/v9"
-	"githut.com/shaco-9696/fiber-kit/config"
+	"githut.com/shaco-go/fiber-kit/config"
 	"time"
 )
 

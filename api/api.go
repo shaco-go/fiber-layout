@@ -3,10 +3,11 @@ package api
 import "github.com/gofiber/fiber/v2"
 
 const SUCCESS_CODE = 0
-const SUCCESS_MESSAGE = "SUCCESS"
+const SUCCESS_MESSAGE = "请求成功"
 
 const FAIL_CODE = 10000
-const FAIL_MESSAGE = "FAIL"
+const FAIL_MESSAGE = "请求异常"
+const FAIL_SERVER_MESSAGE = "服务器繁忙,请稍后再试"
 
 type Response struct {
 	Code int    `json:"code"`

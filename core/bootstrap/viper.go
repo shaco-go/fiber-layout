@@ -3,7 +3,7 @@ package bootstrap
 import (
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
-	"githut.com/shaco-9696/fiber-kit/global"
+	"githut.com/shaco-go/fiber-kit/global"
 )
 
 func Viper(in string) *viper.Viper {

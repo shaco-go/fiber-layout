@@ -3,8 +3,6 @@ package api
 import (
 	"errors"
 	"github.com/duke-git/lancet/v2/xerror"
-	"github.com/gofiber/fiber/v2"
-	"net/http"
 )
 
 var (
@@ -38,17 +36,4 @@ func NewErrMsg(msg string) error {
 	var err *Err
 	_ = errors.As(ErrBadRequest, &err)
 	return NewErr(err.Code(), msg)
-}
-
-// FiberErrorHandler fiber的错误处理
-func FiberErrorHandler(ctx *fiber.Ctx, err error) error {
-	// 检查是否是fiber定义的错误
-	var fiberErr *fiber.Error
-	if errors.As(err, &fiberErr) {
-		if fiberErr.Code < http.StatusInternalServerError {
-			// http code 小于 500,内部处理
-			FailWithMsg(ctx, fiber.Error{})
-		}
-	}
-	return nil
 }
